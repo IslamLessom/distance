@@ -1,8 +1,5 @@
 import React from 'react'
 
-//IMAGES
-import bac from '../assets/images/backgraund.png'
-
 //styled-components
 import {
   Container,
@@ -31,7 +28,6 @@ function Home() {
         <Button>ОБУЧАТЬСЯ</Button>
       </LeftContainer>
       <RightContainer>
-        <Images src={bac} />
       </RightContainer>
     </Container>
   )

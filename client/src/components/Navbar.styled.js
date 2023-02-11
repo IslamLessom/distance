@@ -6,6 +6,13 @@ export const Header = styled.header`
     justify-content: space-between;
     align-items: center;
     height: 87px;
+
+    @media (max-width: 375px) {
+        flex-direction: column;
+        height: 150px;
+        margin-bottom: 15px;
+        align-items: flex-start;
+    }
 `
 export const Logo = styled.div`
     display: flex;
@@ -35,5 +42,11 @@ export const Button = styled.button`
     color: white;
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+
+    @media (max-width: 375px) {
+        margin-left: 25px;
+        width: 87%;
+    }
 `
 
