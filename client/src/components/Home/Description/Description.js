@@ -14,7 +14,10 @@ import {
     Descriptions,
     Blocks
 } from './Description.styled'
+
+//components
 import Instruction from './BlocksDescriprion/Instruction'
+import Programs from './BlocksDescriprion/Programs'
 
 function Description() {
     return (
@@ -40,7 +43,7 @@ function Description() {
 
 
             </Container>
-            <Instruction/>
+            <Programs/>
         </>
     )
 }

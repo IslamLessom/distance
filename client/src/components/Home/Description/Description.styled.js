@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { device } from "../../../assets/adaptation/device-width";
 
 export const Container = styled.div`
     background: #2C2E5E;
     width: 100%;
-    height: 500px;
+    height: 100%;
+    padding-bottom: 30px;
+    
 `
 
 export const Block = styled.div`
@@ -13,12 +16,29 @@ export const Block = styled.div`
     border-radius: 8px;
     padding: 15px;
     cursor: pointer;
+
+    @media ${device.mobileS} {
+        margin-bottom: 30px;
+        height: 90%;
+    }
 `
 
 export const Blocks = styled.div`
     display: grid;
     grid-template-columns: 30% 30% 30%;
     justify-content: center;
+
+    @media ${device.mobileS} {
+        grid-template-columns: 80%; 
+        justify-content: end;
+        text-align: center;
+    }
+
+    @media ${device.laptop} {
+        grid-template-columns: 30% 30% 30%; 
+        text-align: left;
+        justify-content: center;
+    }
 `
 
 export const Image = styled.img`
