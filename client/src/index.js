@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
+
+//components
 import App from './App';
+import ProgramsStore from './store/ProgramsStore';
+
+export const Context = createContext(null)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <App />
+  <Context.Provider value= {{
+    program: new ProgramsStore()
+  }}>
+    <App />
+  </Context.Provider>
 );
 
