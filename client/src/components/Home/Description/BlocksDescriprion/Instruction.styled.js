@@ -16,6 +16,7 @@ export const NameText = styled.h1`
     margin: 0;
     color: white;
     text-align: center;
+    padding-top: 80px;
 `
 export const NameDescription = styled.h2`
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');

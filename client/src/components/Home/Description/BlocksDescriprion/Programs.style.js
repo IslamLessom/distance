@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { deviceMax, device } from "../../../../assets/adaptation/device-width";
+
 export const Container = styled.div`
     background: #2C2E5E;
     padding-bottom: 100px;
@@ -25,6 +27,21 @@ export const ProgramBlocks = styled.div`
     
     display: grid;
     grid-template-columns: 33% 33% 33%;
+
+    @media ${device.mobileS} {
+        grid-template-columns: 100%;
+        justify-content: center;
+    }
+
+    @media ${device.mobileLL} {
+        grid-template-columns: 50% 50%;
+        justify-content: center;
+    }
+
+    @media ${device.laptop} {
+        grid-template-columns: 33% 33% 33%;
+        justify-content: center;
+    }
 `
 export const Program = styled.div`
     background: white;

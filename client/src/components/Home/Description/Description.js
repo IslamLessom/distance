@@ -15,26 +15,32 @@ import {
     Blocks
 } from './Description.styled'
 
+//router-dom
+import { HOME_ROUTE, INSTRUCTION_ROUTE, PROGRAMS_ROUTE, SETTING_AUTH_ROUTE } from '../../../utils/consts'
+import { useNavigate } from 'react-router-dom';
+
 //components
 import Instruction from './BlocksDescriprion/Instruction'
 import Programs from './BlocksDescriprion/Programs'
+import Authorization from './BlocksDescriprion/Authorization'
 
 function Description() {
+    const navigate = useNavigate()
     return (
         <>
             <Container>
                 <Blocks>
-                    <Block>
+                    <Block onClick={() => navigate(INSTRUCTION_ROUTE)}>
                         <Image src={setting} />
                         <Name>Инструкция</Name>
                         <Descriptions>Перейти к инструкции</Descriptions>
                     </Block>
-                    <Block>
+                    <Block onClick={() => navigate(SETTING_AUTH_ROUTE)}>
                         <Image src={authorization} />
                         <Name>Авторизация</Name>
                         <Descriptions>Перейти к авторизации</Descriptions>
                     </Block>
-                    <Block>
+                    <Block onClick={() => navigate(PROGRAMS_ROUTE)}>
                         <Image src={program} />
                         <Name>Программы</Name>
                         <Descriptions>Перейти к программам</Descriptions>
@@ -43,7 +49,6 @@ function Description() {
 
 
             </Container>
-            <Programs/>
         </>
     )
 }
