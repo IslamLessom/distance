@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { device, deviceMax } from "../../../../assets/adaptation/device-width";
 
 export const Container = styled.div`
-    background: #2C2E5E;
+    background: #2C2E5E;;
     width: 100%;
     height: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
 `
 
 export const NameText = styled.h1`
@@ -60,7 +60,7 @@ export const NumberInstruction = styled.h1`
     
     border: #5F94FF 7px solid;
     margin: 0;
-    margin-top: 13px;
+    margin-top: 17px;
 
     @media ${device.laptop} {
         position: absolute;

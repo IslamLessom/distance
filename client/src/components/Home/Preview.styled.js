@@ -200,8 +200,9 @@ export const RightContainer = styled.div`
         width: 100%;
         margin-left: 0;
         background-position: center;
-        margin-top: -279px;
-        background-size: 659px;
+        background-size: 664px;
+        height: 700px;
+        margin-top: -10px;
     }
 
     @media ${device.desktop} {
@@ -209,8 +210,9 @@ export const RightContainer = styled.div`
         width: 100%;
         margin-left: 0;
         background-position: center;
-        margin-top: -268px;
-        background-size: 673px;
+        background-size: 664px;
+        height: 700px;
+        margin-top: -10px;
     }
 
     @media ${device.desktopL} {
@@ -218,8 +220,9 @@ export const RightContainer = styled.div`
         width: 100%;
         margin-left: 0;
         background-position: center;
-        margin-top: -137px;
-        background-size: 800px;
+        background-size: 664px;
+        height: 700px;
+        margin-top: -10px;
     }
 
 `

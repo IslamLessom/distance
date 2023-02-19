@@ -16,13 +16,13 @@ import {
 } from './Description.styled'
 
 //router-dom
-import { HOME_ROUTE, INSTRUCTION_ROUTE, PROGRAMS_ROUTE, SETTING_AUTH_ROUTE } from '../../../utils/consts'
-import { useNavigate } from 'react-router-dom';
+import {
+    INSTRUCTION_ROUTE,
+    PROGRAMS_ROUTE,
+    SETTING_AUTH_ROUTE
+} from '../../../utils/consts'
 
-//components
-import Instruction from './BlocksDescriprion/Instruction'
-import Programs from './BlocksDescriprion/Programs'
-import Authorization from './BlocksDescriprion/Authorization'
+import { useNavigate } from 'react-router-dom';
 
 function Description() {
     const navigate = useNavigate()
@@ -46,8 +46,6 @@ function Description() {
                         <Descriptions>Перейти к программам</Descriptions>
                     </Block>
                 </Blocks>
-
-
             </Container>
         </>
     )

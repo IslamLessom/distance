@@ -16,7 +16,7 @@ export default class ProgramsStore {
     setPrograms(programs) {
         this._programs = programs
     }
-
+    
     get programs() {
         return this._programs
     }

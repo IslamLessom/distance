@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { deviceMax, device } from "../../../../assets/adaptation/device-width";
+import { device } from "../../../../assets/adaptation/device-width";
 
 export const Container = styled.div`
     background: #2C2E5E;

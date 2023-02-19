@@ -2,10 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     background: #2c2e5e;
+    width: 100%;
     height: 100%;
-    padding-top: 1px;
     padding-bottom: 100px;
-    position: relative;
 `
 export const Title = styled.h1`
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
@@ -19,7 +18,7 @@ export const Title = styled.h1`
 `
 export const BlockContent = styled.div`
     width: 90%;
-    height: 100%;
+    height: 50%;
     background: white;
     margin-left: auto;
     margin-right: auto;
