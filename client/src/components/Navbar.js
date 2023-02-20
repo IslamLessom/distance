@@ -36,7 +36,7 @@ function Navbar() {
               <Button>Админ</Button>
             </NavLink>
             <NavLink style={{ textDecoration: 'none', color: 'black' }} to={LOGIN_ROUTE}>
-              <Button>ВОЙТИ</Button>
+              <Button>Выйти</Button>
             </NavLink>
           </>
           :

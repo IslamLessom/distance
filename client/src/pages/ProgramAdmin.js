@@ -1,10 +1,12 @@
 import React from 'react'
 
+import { Container } from './ProgramAdmin.styled'
+
 function TeacherAdmin() {
   return (
-    <div>
+    <Container>
       
-    </div>
+    </Container>
   )
 }
 
