@@ -44,6 +44,14 @@ function ProgramPage() {
           <Actibe>{program.active}</Actibe>
         </ContainerText>
       </ProgramBlock>
+      <ProgramBlock>
+        <Image src={img} />
+        <ContainerText>
+          <Date>Создано {program.date}</Date>
+          <Description>{program.name}</Description>
+          <Actibe>{program.active}</Actibe>
+        </ContainerText>
+      </ProgramBlock>
       <InfoBlock>
         <Title>Информация</Title>
         <ContainerTextInfo>
