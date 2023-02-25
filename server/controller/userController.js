@@ -1,3 +1,5 @@
+const ApiError = require('../error/ApiError')
+
 class UserController {
     async teacher(req, res) {
 
@@ -7,8 +9,12 @@ class UserController {
 
     }
 
-    async check(req, res) {
-        res.json('asdasds')
+    async check(req, res, next) {
+        const { id } = req.query
+        if (!id) {
+            return next(ApiError.badRequest('Не задан id'))
+        }
+        res.json(id)
     }
 }
 
