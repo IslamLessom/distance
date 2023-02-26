@@ -18,7 +18,7 @@ const User = sequelize.define('user', {
 const Programs = sequelize.define('programs', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     images: { type: DataTypes.STRING },
-    date: { type: DataTypes.DATE },
+    date: { type: DataTypes.STRING },
     description: { type: DataTypes.STRING },
     active: { type: DataTypes.STRING }
 })
@@ -34,7 +34,7 @@ const ProgramInfo = sequelize.define('program_info', {
 User.hasMany(Programs)
 Programs.belongsTo(User)
 
-Programs.hasMany(ProgramInfo)
+Programs.hasMany(ProgramInfo, {as: 'info'})
 ProgramInfo.belongsTo(Programs)
 
 module.exports = {

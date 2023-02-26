@@ -7,11 +7,13 @@ const cors = require('cors')
 const fileUpload = require("express-fileupload");
 const router = require('./routes/index')
 const errorHandler = require('./middleware/ErrorHandlingMiddleware')
+const path = require('path')
 
 const app = express()
 
 app.use(cors()) // cors - нужен для тогог что бы отправлять запросы с браузера
 app.use(express.json()) // это что бы наше приложение могло парсить json фармат
+app.use(express.static(path.resolve(__dirname, 'static')))
 app.use(fileUpload({}))
 app.use('/api', router)
  
