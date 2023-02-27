@@ -1,20 +1,65 @@
 const ApiError = require('../error/ApiError')
+const { User } = require('../models/models')
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+
+const generateJwt = (id, name, first_name, father_name, group, schedule, list_teacher, images, email, role, password) => {
+    return jwt.sign(
+        { id, name, first_name, father_name, group, schedule, list_teacher, images, email, role, password },
+        process.env.SECRET_KEY,
+        { expiresIn: '24h' }
+    )
+}
 
 class UserController {
-    async teacher(req, res) {
+    async registration(req, res, next) {
+        const {
+            name,
+            first_name,
+            father_name,
+            group,
+            schedule,
+            list_teacher,
+            role,
+            email,
+            password,
+            images
+        } = req.body
 
+        if (!email || !password) {
+            return next(ApiError.internal('Неверный логин или пароль'))
+        }
+
+        const candidate = await User.findOne({ where: { email } })
+
+        if (candidate) {
+            return next(ApiError.internal('Ошибка'))
+        }
+
+        const hashPassword = await bcrypt.hash(password, 5)
+        const user = await User.create({ name, first_name, father_name, group, schedule, list_teacher, images, email, role, password: hashPassword })
+        const token = generateJwt(user.id, user.name, user.first_name, user.father_name, user.group, user.schedule, user.list_teacher, user.images, user.email, user.role, user.password)
+
+        return res.json({ token })
     }
 
-    async login(req, res) {
-
+    async login(req, res, next) {
+        const { email, password } = req.body
+        const user = await User.findOne({ where: { email } })
+        if (!user) {
+            return next(ApiError.internal('Неверный email'))
+        }
+        let comparePassword = bcrypt.compareSync(password, user.password)
+        if (!comparePassword) {
+            return next(ApiError.internal('Неверный пароль'))
+        }
+        const token = generateJwt(user.id, user.name, user.first_name, user.father_name, user.group, user.schedule, user.list_teacher, user.images, user.email, user.role, user.password)
+        return res.json({ token })
     }
 
     async check(req, res, next) {
-        const { id } = req.query
-        if (!id) {
-            return next(ApiError.badRequest('Не задан id'))
-        }
-        res.json(id)
+        const token = generateJwt(reg.user.id, reg.user.name, reg.user.first_name, reg.user.father_name, reg.user.group, reg.user.schedule, reg.user.list_teacher, reg.user.images, reg.user.email, reg.user.role, reg.user.password)
+        return res.json({ token })
     }
 }
 
