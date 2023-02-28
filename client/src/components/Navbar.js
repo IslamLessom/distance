@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Context } from '..';
 //react-router
 import { NavLink } from 'react-router-dom';
-import { ADMIN_ROUTE, HOME_ROUTE, LOGIN_ROUTE } from '../utils/consts';
+import { HOME_ROUTE, LOGIN_ROUTE } from '../utils/consts';
 
 //styled-components
 import {
@@ -32,11 +32,8 @@ function Navbar() {
       <div>
         {user.isAuth ?
           <>
-            <NavLink style={{ textDecoration: 'none', color: 'black' }} to={ADMIN_ROUTE}>
-              <Button>Админ</Button>
-            </NavLink>
             <NavLink style={{ textDecoration: 'none', color: 'black' }} to={LOGIN_ROUTE}>
-              <Button>Выйти</Button>
+              <Button>ВОЙТИ</Button>
             </NavLink>
           </>
           :

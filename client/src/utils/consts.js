@@ -1,7 +1,6 @@
-export const ADMIN_ROUTE = '/admin'
-export const LOGIN_ROUTE = '/login'
 export const HOME_ROUTE = '/'
 export const PROGRAMS_ROUTE = '/program'
+export const LOGIN_ROUTE = '/login'
 export const TEACHER_ROUTE = '/teacher'
 export const DIRECTOR_ROUTE = '/director'
 export const CHILDREN_ROUTE = '/children'

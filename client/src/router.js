@@ -1,6 +1,5 @@
 //ROUTE
 import {
-    ADMIN_ROUTE,
     CHILDREN_ROUTE,
     DIRECTOR_ROUTE,
     HOME_AUTH_ROUTE,
@@ -22,10 +21,6 @@ import Auth from "./pages/Auth";
 import AuthHome from "./pages/AuthHome";
 
 export const authRoutes = [
-    {
-        path: ADMIN_ROUTE,
-        Component: ProgramPage
-    },
     {
         path: TEACHER_ROUTE,
         Component: ProgramPage

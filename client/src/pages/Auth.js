@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+//components
+import { login } from './../http/userApi';
 
 //route
 import { NavLink } from 'react-router-dom'
@@ -16,15 +19,34 @@ import {
 } from './Auth.styled'
 
 function Auth() {
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+
+  const signIn = async () => {
+    const response = await login (email, password)
+    console.log(response)
+  }
   return (
     <Container>
       <AuthBlock>
         <Tittle>ВОЙТИ</Tittle>
         <ContainerInput>
-          <Login type='text' placeholder='ВВЕДИТЕ СВОЙ ЛОГИН' />
-          <Password type='password' placeholder='ВВЕДИТЕ СВОЙ ПАРОЛЬ' />
+          <Login
+            type='text'
+            placeholder='ВВЕДИТЕ СВОЙ ЛОГИН'
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
+          <Password
+            type='password'
+            placeholder='ВВЕДИТЕ СВОЙ ПАРОЛЬ'
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
         </ContainerInput>
-        <NavLink to={HOME_AUTH_ROUTE}><Button>ВОЙТИ</Button></NavLink>
+        <NavLink>
+          <Button onClick={signIn}>ВОЙТИ</Button>
+        </NavLink>
       </AuthBlock>
     </Container>
   )
