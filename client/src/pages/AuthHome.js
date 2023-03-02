@@ -6,7 +6,7 @@ import {Container} from './AuthHome.styled'
 function AuthHome() {
   return (
     <Container>
-      Зареган
+      <h1>asdasd</h1>
     </Container>
   )
 }

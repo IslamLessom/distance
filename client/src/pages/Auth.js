@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 
 //components
 import { login } from './../http/userApi';
+import { Context } from './../index';
+//mob-x
+import { observer } from 'mobx-react-lite';
 
 //route
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { HOME_AUTH_ROUTE } from '../utils/consts'
 
 //styled-components
@@ -18,13 +21,23 @@ import {
   Button
 } from './Auth.styled'
 
-function Auth() {
+const Auth = observer(() => {
+  const navigate = useNavigate()
+  const { user } = useContext(Context)
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
 
   const signIn = async () => {
-    const response = await login (email, password)
-    console.log(response)
+    try {
+      let data
+      data = await login(email, password)
+      console.log(data)
+      user.setUser(user)
+      user.setIsAuth(true)
+      navigate(HOME_AUTH_ROUTE)
+    } catch (e) {
+      alert('Ошибка авторизации')
+    }
   }
   return (
     <Container>
@@ -50,6 +63,6 @@ function Auth() {
       </AuthBlock>
     </Container>
   )
-}
+})
 
 export default Auth

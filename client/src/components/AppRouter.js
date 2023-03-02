@@ -8,6 +8,7 @@ import { publicRoutes, authRoutes } from '../router'
 
 function AppRouter() {
     const { user } = useContext(Context)
+    console.log(user.isAuth)
     return (
         <Routes>
             {user.isAuth && authRoutes.map(({path, Component}) => 
