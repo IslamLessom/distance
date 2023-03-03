@@ -39,6 +39,7 @@ const Auth = observer(() => {
       alert('Ошибка авторизации')
     }
   }
+
   return (
     <Container>
       <AuthBlock>
