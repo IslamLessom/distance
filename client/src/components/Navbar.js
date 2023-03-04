@@ -1,8 +1,12 @@
 import React, { useContext } from 'react'
 import { Context } from '..';
+
+//mob-x
+import { observer } from 'mobx-react-lite';
+
 //react-router
 import { NavLink } from 'react-router-dom';
-import { HOME_ROUTE, LOGIN_ROUTE } from '../utils/consts';
+import { HOME_ROUTE, LOGIN_ROUTE, TEACHER_ROUTE } from '../utils/consts';
 
 //styled-components
 import {
@@ -10,7 +14,8 @@ import {
   Logo,
   LogoImages,
   LogoText,
-  Button
+  Button,
+  ButtonAdmin
 } from './Navbar.styled';
 import { GlobalStyle } from '../GlobalStyles';
 
@@ -18,8 +23,13 @@ import { GlobalStyle } from '../GlobalStyles';
 import logo from '../assets/images/logo.png'
 
 
-function Navbar() {
+const  Navbar = observer(() => {
   const { user } = useContext(Context)
+
+  const logOut = () => {
+    user.setUser({})
+    user.setIsAuth(false)
+  }
   return (
     <Header>
       <GlobalStyle />
@@ -32,8 +42,11 @@ function Navbar() {
       <div>
         {user.isAuth ?
           <>
-            <NavLink style={{ textDecoration: 'none', color: 'black' }} to={LOGIN_ROUTE}>
-              <Button>ВОЙТИ</Button>
+            <NavLink style={{ textDecoration: 'none', color: 'black' }} to={TEACHER_ROUTE}>
+              <ButtonAdmin>ДОБАВИТЬ УЧЕНИКА</ButtonAdmin>
+            </NavLink>
+            <NavLink style={{ textDecoration: 'none', color: 'black' }} to={HOME_ROUTE}>
+              <Button onClick={() => logOut()}>ВЫЙТИ</Button>
             </NavLink>
           </>
           :
@@ -42,10 +55,8 @@ function Navbar() {
           </NavLink>
         }
       </div>
-
-
     </Header>
   )
-}
+})
 
 export default Navbar

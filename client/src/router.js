@@ -19,11 +19,12 @@ import Instruction from "./components/Home/Description/BlocksDescriprion/Instruc
 import Authorization from "./components/Home/Description/BlocksDescriprion/Authorization";
 import Auth from "./pages/Auth";
 import AuthHome from "./pages/AuthHome";
+import CreateUser from "./pages/CreateUser";
 
 export const authRoutes = [
     {
         path: TEACHER_ROUTE,
-        Component: ProgramPage
+        Component: CreateUser
     },
     {
         path: DIRECTOR_ROUTE,

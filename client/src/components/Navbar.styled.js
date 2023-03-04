@@ -50,3 +50,22 @@ export const Button = styled.button`
     }
 `
 
+export const ButtonAdmin = styled.button`
+     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+    height: 38px;
+    margin-right: 20px;
+    width: 235px;
+    border-radius: 8px;
+    border: none;
+    background: #5F94FF;
+    color: white;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+
+    @media (max-width: 375px) {
+        margin-left: 25px;
+        width: 87%;
+    }
+`
+

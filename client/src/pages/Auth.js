@@ -31,7 +31,6 @@ const Auth = observer(() => {
     try {
       let data
       data = await login(email, password)
-      console.log(data)
       user.setUser(user)
       user.setIsAuth(true)
       navigate(HOME_AUTH_ROUTE)
