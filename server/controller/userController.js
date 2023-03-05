@@ -33,7 +33,7 @@ class UserController {
         const candidate = await User.findOne({ where: { email } })
 
         if (candidate) {
-            return next(ApiError.internal('Ошибка'))
+            return next(ApiError.internal('Такой пользователь существует'))
         }
 
         const hashPassword = await bcrypt.hash(password, 5)
