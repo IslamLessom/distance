@@ -1,4 +1,6 @@
-import React, { useContext } from 'react'
+import React, {useState, useContext } from 'react'
+
+//components
 import { Context } from '..';
 
 //mob-x
@@ -22,10 +24,9 @@ import { GlobalStyle } from '../GlobalStyles';
 //images-logo
 import logo from '../assets/images/logo.png'
 
-
 const  Navbar = observer(() => {
   const { user } = useContext(Context)
-
+  
   const logOut = () => {
     user.setUser({})
     user.setIsAuth(false)

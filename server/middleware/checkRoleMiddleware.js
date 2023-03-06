@@ -15,7 +15,7 @@ module.exports = function(role) {
                 return res.status(403).json({message: "Нет доступа"})
             }
             req.user = decoded;
-            next()
+            next() 
         } catch (e) {
             res.status(401).json({message: "Не авторизован"})
         }
