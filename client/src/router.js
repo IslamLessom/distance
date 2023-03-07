@@ -1,6 +1,6 @@
 //ROUTE
 import {
-    CHILDREN_ROUTE,
+    STUDENT_ROUTE,
     DIRECTOR_ROUTE,
     HOME_AUTH_ROUTE,
     HOME_ROUTE,
@@ -20,6 +20,7 @@ import Authorization from "./components/Home/Description/BlocksDescriprion/Autho
 import Auth from "./pages/Auth";
 import AuthHome from "./pages/AuthHome";
 import CreateUser from "./pages/CreateUser";
+import PersonPage from './pages/PersonPage';
 
 export const authRoutes = [
     {
@@ -31,8 +32,8 @@ export const authRoutes = [
         Component: ProgramPage
     },
     {
-        path: CHILDREN_ROUTE,
-        Component: ProgramPage
+        path: STUDENT_ROUTE,
+        Component: PersonPage
     },
     {
         path: PROGRAMS_ROUTE + '/:id',

@@ -7,8 +7,7 @@ import { Context } from './../index';
 import { observer } from 'mobx-react-lite';
 
 //route
-import { NavLink, useNavigate } from 'react-router-dom'
-import { HOME_AUTH_ROUTE } from '../utils/consts'
+import { NavLink } from 'react-router-dom'
 
 //styled-components
 import {
@@ -22,7 +21,6 @@ import {
 
 
 const CreateUser = observer(() => {
-    const navigate = useNavigate()
     const { user } = useContext(Context)
 
     //user-state

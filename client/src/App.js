@@ -23,6 +23,16 @@ const App = observer(() => {
     }).finally(() => setLoading(false))
   }, [])
 
+  if (loading) {
+    return <h1 style={
+      {
+        textAlign: 'center',
+        marginTop: '100px',
+        fontSize: '40px'
+      }
+    }>Загрузка....</h1>
+  }
+
   return (
     <BrowserRouter>
       <Navbar />

@@ -3,9 +3,8 @@ import React, { useContext } from 'react'
 import { Context } from '../index'
 
 //router-dom
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { publicRoutes, authRoutes } from '../router'
-import { HOME_ROUTE } from '../utils/consts';
 
 //mob-x
 import { observer } from "mobx-react-lite";

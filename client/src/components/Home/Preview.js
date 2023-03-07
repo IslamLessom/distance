@@ -1,7 +1,10 @@
 import React from 'react'
 
-//styled-components
+//route
+import { useNavigate } from 'react-router-dom';
+import { LOGIN_ROUTE } from '../../utils/consts';
 
+//styled-components
 import {
   Container,
   LeftContainer,
@@ -13,6 +16,7 @@ import {
 } from './Preview.styled';
 
 function Preview() {
+  const navigate = useNavigate()
   return (
     <Container>
       <LeftContainer>
@@ -25,7 +29,7 @@ function Preview() {
           квалификации будут выдавать пароли и логины .
           Если вы не являетесь учениками КППК , то доступ будет ограничен
         </Description>
-        <Button>ОБУЧАТЬСЯ</Button>
+        <Button onClick={() => navigate(LOGIN_ROUTE)}>ОБУЧАТЬСЯ</Button>
       </LeftContainer>
       <RightContainer>
       </RightContainer>

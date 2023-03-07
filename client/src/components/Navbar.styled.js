@@ -30,6 +30,16 @@ export const LogoText = styled.h2`
     padding-top: 4px;
     font-family: 'Montserrat', sans-serif;
 `
+export const ButtonContainer = styled.div`
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+`
+
+export const Profile = styled.img`
+    width: 50px;
+    height: 50px;
+`
 
 export const Button = styled.button`
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');

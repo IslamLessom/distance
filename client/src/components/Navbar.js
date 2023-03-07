@@ -1,4 +1,4 @@
-import React, {useState, useContext } from 'react'
+import React, { useContext } from 'react'
 
 //components
 import { Context } from '..';
@@ -8,7 +8,7 @@ import { observer } from 'mobx-react-lite';
 
 //react-router
 import { NavLink } from 'react-router-dom';
-import { HOME_ROUTE, LOGIN_ROUTE, TEACHER_ROUTE } from '../utils/consts';
+import { HOME_ROUTE, LOGIN_ROUTE, STUDENT_ROUTE } from '../utils/consts';
 
 //styled-components
 import {
@@ -17,16 +17,18 @@ import {
   LogoImages,
   LogoText,
   Button,
-  ButtonAdmin
+  Profile,
+  ButtonContainer
 } from './Navbar.styled';
 import { GlobalStyle } from '../GlobalStyles';
 
 //images-logo
 import logo from '../assets/images/logo.png'
+import profile from '../assets/images/profile.png'
 
-const  Navbar = observer(() => {
+const Navbar = observer(() => {
   const { user } = useContext(Context)
-  
+
   const logOut = () => {
     user.setUser({})
     user.setIsAuth(false)
@@ -40,14 +42,14 @@ const  Navbar = observer(() => {
           <LogoText>КППК - КИЗЛЯР</LogoText>
         </Logo>
       </NavLink>
-      <div>
+      <ButtonContainer>
         {user.isAuth ?
           <>
-            <NavLink style={{ textDecoration: 'none', color: 'black' }} to={TEACHER_ROUTE}>
-              <ButtonAdmin>ДОБАВИТЬ УЧЕНИКА</ButtonAdmin>
-            </NavLink>
             <NavLink style={{ textDecoration: 'none', color: 'black' }} to={HOME_ROUTE}>
               <Button onClick={() => logOut()}>ВЫЙТИ</Button>
+            </NavLink>
+            <NavLink style={{ textDecoration: 'none', color: 'black' }} to={STUDENT_ROUTE}>
+              <Profile src={profile} />
             </NavLink>
           </>
           :
@@ -55,7 +57,7 @@ const  Navbar = observer(() => {
             <Button>ВОЙТИ</Button>
           </NavLink>
         }
-      </div>
+      </ButtonContainer>
     </Header>
   )
 })
