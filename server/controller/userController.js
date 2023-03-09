@@ -1,3 +1,5 @@
+const uuid = require('uuid')
+const path = require('path');
 const ApiError = require('../error/ApiError')
 const { User } = require('../models/models')
 const bcrypt = require('bcrypt')
@@ -13,7 +15,7 @@ const generateJwt = (id, name, first_name, father_name, group, schedule, list_te
 
 class UserController {
     async registration(req, res, next) {
-        const {
+        let {
             name,
             first_name,
             father_name,
@@ -23,7 +25,6 @@ class UserController {
             role,
             email,
             password,
-            images
         } = req.body
 
         if (!email || !password) {

@@ -38,7 +38,7 @@ const PersonPage = observer(() => {
   const [group, setGroup] = useState()
   const [schedule, setSchedule] = useState()
   const [list_teacher, setList_teacher] = useState()
-  const [images, setImages] = useState()
+  const [images, setImages] = useState(null)
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
   const [role, setRole] = useState()
@@ -70,7 +70,7 @@ const PersonPage = observer(() => {
   }
 
 
-  console.log(state)
+  console.log(state) 
 
   return (
     <Profile>
@@ -91,23 +91,27 @@ const PersonPage = observer(() => {
         </ProfileInfo>
         <InformationPanel>
           <Title>Информация</Title>
-          {
-            <ButtonContainer>
-              <InformationButton><NavLink to={state.schedule}>Расписание занятий</NavLink></InformationButton>
-              <InformationButton>Новости</InformationButton>
-              <InformationButton><NavLink to={state.list_teacher}>Преподаватели</NavLink></InformationButton>
-            </ButtonContainer>
-          }
-
-        </InformationPanel>
-        <AdminPanel>
-          <Title>Админ панель</Title>
           <ButtonContainer>
-            <InformationButton>Добавить программу</InformationButton>
-            <InformationButton><NavLink style={{ textDecoration: 'none', color: '#274568' }} to={TEACHER_ROUTE}>Добавить ученика</NavLink></InformationButton>
-            <InformationButton>Все ученики</InformationButton>
+            <InformationButton><NavLink to={state.schedule}>Расписание занятий</NavLink></InformationButton>
+            <InformationButton>Новости</InformationButton>
+            <InformationButton><NavLink to={state.list_teacher}>Преподаватели</NavLink></InformationButton>
           </ButtonContainer>
-        </AdminPanel>
+        </InformationPanel>
+        {
+          state.role === 'ADMIN' ?
+            <>
+              <AdminPanel>
+                <Title>Админ панель</Title>
+                <ButtonContainer>
+                  <InformationButton>Добавить программу</InformationButton>
+                  <InformationButton><NavLink style={{ textDecoration: 'none', color: '#274568' }} to={TEACHER_ROUTE}>Добавить ученика</NavLink></InformationButton>
+                  <InformationButton>Все ученики</InformationButton>
+                </ButtonContainer>
+              </AdminPanel>
+            </>
+            :
+            <></>
+        }
       </ProfileContainer>
     </Profile>
   )

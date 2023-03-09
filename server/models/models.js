@@ -12,7 +12,7 @@ const User = sequelize.define('user', {
     role: { type: DataTypes.STRING, defaultValue: 'USER' },
     email: { type: DataTypes.STRING, unique: true },
     password: { type: DataTypes.STRING },
-    images: { type: DataTypes.STRING }
+    images: { type: DataTypes.STRING, allowNull: false }
 })
 
 const Programs = sequelize.define('programs', {
@@ -34,7 +34,7 @@ const ProgramInfo = sequelize.define('program_info', {
 User.hasMany(Programs)
 Programs.belongsTo(User)
 
-Programs.hasMany(ProgramInfo, {as: 'info'})
+Programs.hasMany(ProgramInfo, { as: 'info' })
 ProgramInfo.belongsTo(Programs)
 
 module.exports = {

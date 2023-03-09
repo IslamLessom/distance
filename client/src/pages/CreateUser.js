@@ -16,7 +16,9 @@ import {
     Tittle,
     ContainerInput,
     Input,
-    Button
+    Select,
+    Button,
+    InputImages
 } from './CreateUser.styled'
 
 
@@ -61,11 +63,13 @@ const CreateUser = observer(() => {
                         placeholder='Отчество'
                         onChange={e => setFather_name(e.target.value)}
                     />
-                    <Input
-                        type='text'
-                        placeholder='Группа'
-                        onChange={e => setGroup(e.target.value)}
-                    />
+                    <Select onChange={e => setGroup(e.target.value)}>
+                        <option disabled>Выберите группу</option>
+                        <option value='3-ИСиП-4'>3-ИСиП-4</option>
+                        <option value='4-ИСиП-3'>4-ИСиП-3</option>
+                        <option value='5-ИСиП-2'>5-ИСиП-2</option>
+                        <option value='6-ИСиП-1'>6-ИСиП-1</option>
+                    </Select>
                     <Input
                         type='text'
                         placeholder='Фото URL'
@@ -91,12 +95,11 @@ const CreateUser = observer(() => {
                         placeholder='Пароль'
                         onChange={e => setPassword(e.target.value)}
                     />
-                    <Input
-                        type='text'
-                        placeholder='Роль - ADMIN - USER'
-                        onChange={e => setRole(e.target.value)}
-                    />
-
+                    <Select onChange={e => setRole(e.target.value)}>
+                        <option disabled>Выберите роль</option>
+                        <option value='USER'>USER</option>
+                        <option value='ADMIN'>ADMIN</option>
+                    </Select>
                 </ContainerInput>
 
                 <Button onClick={signIn}><NavLink style={{ textDecoration: 'none', color: 'black' }}>СОЗДАТЬ</NavLink></Button>

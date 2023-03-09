@@ -45,6 +45,50 @@ export const Input = styled.input`
     color: #01244E;
 `
 
+export const InputImages = styled.input`
+    ::-webkit-file-upload-button {
+        visibility: hidden;
+    }
+
+    ::before  {
+        content: 'Выберите фото';
+        display: inline-block;
+        background: white;
+        margin-bottom: 30px;
+        border-radius: 3px;
+        padding: 5px 8px;
+        outline: none;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        cursor: pointer;
+        text-shadow: 1px 1px #fff;
+        font-weight: 700;
+        font-size: 14pt;
+        color: #01244E;
+    }
+
+    :hover::before {
+        border-color: black;
+    }
+
+    :active::before {
+        background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9)
+    }
+`
+export const Select = styled.select`
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+    font-family: 'Montserrat', sans-serif;
+    
+    text-align: left;   
+    font-size: 22px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    color: #01244E;
+`
+
 export const Button = styled.button`
     position: absolute;
     bottom: 0;
