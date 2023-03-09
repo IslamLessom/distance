@@ -2,6 +2,7 @@
 
 ## Это мой первый full-stack проект. Я использую - 
 Frontend - React, TypeScript, Mob-x(заменю на Redux), mobx-react-lite, styled-components, axios, jwt-decode, react-router-dom
+
 Backend - NodeJs, Express, uuid, sequelize, jsonwebtoken, express-fileupload, dotenv, cors
 
 ## Какое приложение я хочу поднять используя это всё ? 
