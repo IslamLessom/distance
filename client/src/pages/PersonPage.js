@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react'
-
-//image
-import user from '../assets/images/user_test.jfif'
+import React, { useState, useEffect, useContext } from 'react'
 
 //mob-x
 import { observer } from 'mobx-react-lite';
+
+//components
+import { check } from '../http/userAPI';
+
+//context
+import { Context } from './../index';
 
 //route
 import { NavLink } from 'react-router-dom';
@@ -25,12 +28,15 @@ import {
   AdminPanel
 } from './PersonPage.styled'
 
-//components
-import { check } from './../http/userApi';
+//image
+import user from '../assets/images/user_test.jfif'
+
+
 
 const PersonPage = observer(() => {
   const [loading, setLoading] = useState(true)
   const [state, setState] = useState()
+  const { user } = useContext(Context)
   //user-state
   const [name, setName] = useState()
   const [first_name, setFirst_name] = useState()
@@ -81,9 +87,7 @@ const PersonPage = observer(() => {
               <UserImage src={state.images} />
               <UserText>
                 <UserTextInfo>{state.first_name} {state.name} {state.father_name}</UserTextInfo>
-                <UserTextInfo>Статус - Студент</UserTextInfo>
-                <UserTextInfo>Группа - {state.group}</UserTextInfo>
-                <UserTextInfo>Куратор - Узлипат К.М</UserTextInfo>
+                <UserTextInfo>Статус - {state.group}</UserTextInfo>
               </UserText>
             </>
           }

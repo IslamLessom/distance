@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 
 //components
-import { login } from './../http/userApi';
+import { login } from '../http/userAPI';
 import { Context } from './../index';
 //mob-x
 import { observer } from 'mobx-react-lite';

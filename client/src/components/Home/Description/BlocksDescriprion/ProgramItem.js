@@ -21,6 +21,7 @@ import {
 const ProgramItem = ({ program }) => {
     const { user } = useContext(Context)
     const navigate = useNavigate()
+    console.log(program)
     return (
         <>
             {user.isAuth ?

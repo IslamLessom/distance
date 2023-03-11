@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+
+//react-router
+import { useParams } from 'react-router-dom'
 
 //styled-components
 import {
@@ -21,19 +24,16 @@ import {
 
 //images
 import img from '../assets/images/program-one.png'
+import { fetchOnePrograms } from '../http/programAPI'
 
 function ProgramPage() {
-  const program = {
-    id: 1,
-    name: '“Общее образование в СПО: вариативные модели реализации”(25-ПК)',
-    date: '02.02.2023',
-    active: 'АКТИВНО',
-    telegram: 'https://t.me/kppk11',
-    documents: 'https://cloud.mail.ru/public/G5uC/YfccgkRNJ',
-    works: 'https://cloud.mail.ru/public/jTbq/PqWB7JkvL',
-    sledding: 'http://feosurdo.ru/load/obrazovatelnyj_process/raspisanie_zanjatij_doshkolnogo_otdelenija/3-1-0-64',
-    contact: ''
-  }
+  const [program, setProgram] = useState({ info: [] })
+  const { id } = useParams()
+
+  useEffect(() => {
+    fetchOnePrograms(id).then(data => setProgram(data))
+  }, [])
+  console.log(program)
   return (
     <Container>
       <ProgramBlock>
@@ -44,7 +44,7 @@ function ProgramPage() {
           <Actibe>{program.active}</Actibe>
         </ContainerText>
       </ProgramBlock>
-      
+
       <InfoBlock>
         <Title>Информация</Title>
         <ContainerTextInfo>

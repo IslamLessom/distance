@@ -10,7 +10,7 @@ import { observer } from 'mobx-react-lite';
 import Navbar from './components/Navbar';
 import AppRouter from './components/AppRouter';
 import { Context } from './index';
-import { check } from './http/userApi';
+import { check } from './http/userAPI';
 
 const App = observer(() => {
   const { user } = useContext(Context)
