@@ -9,10 +9,10 @@ const User = sequelize.define('user', {
     group: { type: DataTypes.STRING },
     schedule: { type: DataTypes.STRING },
     list_teacher: { type: DataTypes.STRING },
-    role: { type: DataTypes.STRING, defaultValue: 'USER' },
+    images: { type: DataTypes.STRING},
     email: { type: DataTypes.STRING, unique: true },
     password: { type: DataTypes.STRING },
-    images: { type: DataTypes.STRING, allowNull: false }
+    role: { type: DataTypes.STRING, defaultValue: 'USER' },
 })
 
 const Programs = sequelize.define('programs', {
