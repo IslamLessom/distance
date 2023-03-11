@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 
 //components
-import { registration } from './../http/userApi';
+import { registration } from '../http/userAPI';
 import { Context } from './../index';
 //mob-x
 import { observer } from 'mobx-react-lite';
@@ -64,11 +64,10 @@ const CreateUser = observer(() => {
                         onChange={e => setFather_name(e.target.value)}
                     />
                     <Select onChange={e => setGroup(e.target.value)}>
-                        <option disabled>Выберите группу</option>
-                        <option value='3-ИСиП-4'>3-ИСиП-4</option>
-                        <option value='4-ИСиП-3'>4-ИСиП-3</option>
-                        <option value='5-ИСиП-2'>5-ИСиП-2</option>
-                        <option value='6-ИСиП-1'>6-ИСиП-1</option>
+                        <option disabled>Выберите статус пользователя</option>
+                        <option value='Старший методист'>Старший методист</option>
+                        <option value='Методист'>Методист</option>
+                        <option value='Студент'>Студент</option>
                     </Select>
                     <Input
                         type='text'
