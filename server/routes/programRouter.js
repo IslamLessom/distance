@@ -5,6 +5,6 @@ const router = new Router()
 
 router.post('/', checkRoleMiddleware('ADMIN'), programController.create),
 router.get('/', programController.getAll),
-router.get('/:id', checkRoleMiddleware('USER'), programController.getOne)
+router.get('/:id', programController.getOne)
 
 module.exports = router

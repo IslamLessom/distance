@@ -6,25 +6,24 @@ class ProgramController {
     async create(req, res, next) {
         try {
             let { date, description, active, info } = req.body
-            
+
             const { img } = req.files
             let fileName = uuid.v4() + '.jpg'
             img.mv(path.resolve(__dirname, '..', 'static', fileName))
-
+            const program = await Programs.create({ images: fileName, date, description, active })
+            
             if (info) {
                 info = JSON.parse(info)
                 info.forEach(i =>
                     ProgramInfo.create({
                         programId: program.id,
                         document: i.document,
-                        date: i.date,
-                        description: i.description,
-                        active: i.active
+                        telegram: i.telegram,
+                        schedule: i.schedule,
+                        work: i.work
                     })
                 )
             }
-
-            const program = await Programs.create({ images: fileName, date, description, active })
 
             return res.json(program)
         } catch (e) {
