@@ -21,22 +21,30 @@ import {
 const ProgramItem = ({ program }) => {
     const { user } = useContext(Context)
     const navigate = useNavigate()
-    console.log(program)
     return (
         <>
             {user.isAuth ?
                 <ContainerText key={program.id} onClick={() => navigate(PROGRAMS_ROUTE + '/' + program.id)} >
                     <Images src={programImg} />
-                    <DateCreate>Создано {program.date}</DateCreate>
-                    <DescriptionProgram>{program.name}</DescriptionProgram>
-                    <ActiveProgram>{program.active}</ActiveProgram>
+                    <DateCreate>Создано {program.date.split('T')[0]}</DateCreate>
+                    <DescriptionProgram>{program.description}</DescriptionProgram>
+                    {program.active === 'Закрыто' ?
+                        <ActiveProgram style={{ background: '#E8407C' }}>{program.active}</ActiveProgram>
+                        :
+                        <ActiveProgram>{program.active}</ActiveProgram>
+                    }
                 </ContainerText>
                 :
                 <ContainerText key={program.id}>
                     <Images src={programImg} />
-                    <DateCreate>Создано {program.date}</DateCreate>
-                    <DescriptionProgram>{program.name}</DescriptionProgram>
-                    <ActiveProgram>{program.active}</ActiveProgram>
+                    <DateCreate>Создано {program.date.split('T')[0]}</DateCreate>
+                    <DescriptionProgram>{program.description}</DescriptionProgram>
+                    {program.active === 'Закрыто' ?
+                        <ActiveProgram style={{ background: 'red' }}>{program.active}</ActiveProgram>
+                        :
+                        <ActiveProgram>{program.active}</ActiveProgram>
+                    }
+
                 </ContainerText>
             }
         </>

@@ -22,8 +22,7 @@ import {
   ContainerTextInfo
 } from './ProgramPage.styled'
 
-//images
-import img from '../assets/images/program-one.png'
+//components
 import { fetchOnePrograms } from '../http/programAPI'
 
 function ProgramPage() {
@@ -37,11 +36,16 @@ function ProgramPage() {
   return (
     <Container>
       <ProgramBlock>
-        <Image src={img} />
+        <Image src={process.env.REACT_APP_API_URL + program.images} />
         <ContainerText>
           <Date>Создано {program.date}</Date>
-          <Description>{program.name}</Description>
-          <Actibe>{program.active}</Actibe>
+          <Description>{program.description}</Description>
+          {program.active === 'Закрыто' ?
+            <Actibe style={{ background: '#E8407C' }}>{program.active}</Actibe>
+            :
+            <Actibe>{program.active}</Actibe>
+          }
+
         </ContainerText>
       </ProgramBlock>
 
