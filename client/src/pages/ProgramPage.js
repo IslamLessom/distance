@@ -38,7 +38,7 @@ function ProgramPage() {
       <ProgramBlock>
         <Image src={process.env.REACT_APP_API_URL + program.images} />
         <ContainerText>
-          <Date>Создано {program.date}</Date>
+          <Date>Создано {program.date.split('T')[0]}</Date>
           <Description>{program.description}</Description>
           {program.active === 'Закрыто' ?
             <Actibe style={{ background: '#E8407C' }}>{program.active}</Actibe>

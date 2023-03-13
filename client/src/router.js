@@ -8,7 +8,8 @@ import {
     LOGIN_ROUTE,
     PROGRAMS_ROUTE,
     SETTING_AUTH_ROUTE,
-    TEACHER_ROUTE
+    TEACHER_ROUTE,
+    CREATE_PROGRAM_ROUTE
 } from "./utils/consts";
 
 //components
@@ -21,6 +22,7 @@ import Auth from "./pages/Auth";
 import AuthHome from "./pages/AuthHome";
 import CreateUser from "./pages/CreateUser";
 import PersonPage from './pages/PersonPage';
+import ProgramCreate from "./pages/ProgramCreate";
 
 export const authRoutes = [
     {
@@ -43,6 +45,10 @@ export const authRoutes = [
         path: HOME_AUTH_ROUTE,
         Component: AuthHome
     },
+    {
+        path: CREATE_PROGRAM_ROUTE,
+        Component: ProgramCreate
+    }
 ]
 
 export const publicRoutes = [
