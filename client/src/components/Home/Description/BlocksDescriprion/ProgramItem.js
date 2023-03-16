@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Context } from '../../../../index';
 
 //router-dom
@@ -21,18 +21,22 @@ import {
 const ProgramItem = ({ program }) => {
     const { user } = useContext(Context)
     const navigate = useNavigate()
+
     return (
         <>
             {user.isAuth ?
                 <ContainerText key={program.id} onClick={() => navigate(PROGRAMS_ROUTE + '/' + program.id)} >
-                    <Images src={programImg} />
-                    <DateCreate>Создано {program.date.split('T')[0]}</DateCreate>
-                    <DescriptionProgram>{program.description}</DescriptionProgram>
-                    {program.active === 'Закрыто' ?
-                        <ActiveProgram style={{ background: '#E8407C' }}>{program.active}</ActiveProgram>
-                        :
-                        <ActiveProgram>{program.active}</ActiveProgram>
-                    }
+                    <Images src={program.images} />
+                    <div style={{paddingLeft: '10px'}}>
+                        <DateCreate>Создано {program.date}</DateCreate>
+                        <DescriptionProgram>{program.description}</DescriptionProgram>
+                        {program.active === 'Закрыто' ?
+                            <ActiveProgram style={{ background: '#E8407C' }}>{program.active}</ActiveProgram>
+                            :
+                            <ActiveProgram>{program.active}</ActiveProgram>
+                        }
+                    </div>
+
                 </ContainerText>
                 :
                 <ContainerText key={program.id}>

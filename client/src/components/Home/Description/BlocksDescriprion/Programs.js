@@ -13,6 +13,8 @@ import {
 } from './Programs.style'
 import ProgramItem from './ProgramItem'
 import { fetchPrograms } from '../../../../http/programAPI'
+import { NavLink } from 'react-router-dom'
+import { CREATE_PROGRAM_ROUTE } from '../../../../utils/consts'
 
 const Programs = observer(() => {
     const { program } = useContext(Context)
@@ -21,10 +23,12 @@ const Programs = observer(() => {
         fetchPrograms().then(data => program.setPrograms(data.rows))
     }, [])
 
+    console.log(program.programs)
     return (
         <Container>
             <Title>Программы обучения</Title>
             <ProgramBlocks>
+                
                 {program.programs.map(program =>
                     <Program key={program.id}>
                         <ProgramItem key={program.id} program={program} />

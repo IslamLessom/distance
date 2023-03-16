@@ -88,9 +88,9 @@ const PersonPage = observer(() => {
         <InformationPanel>
           <Title>Информация</Title>
           <ButtonContainer>
-            <InformationButton><NavLink to={state.schedule}>Расписание занятий</NavLink></InformationButton>
+            <InformationButton><NavLink style={{ textDecoration: 'none', color: '#274568' }} to={state.schedule}>Расписание занятий</NavLink></InformationButton>
             <InformationButton>Новости</InformationButton>
-            <InformationButton><NavLink to={state.list_teacher}>Преподаватели</NavLink></InformationButton>
+            <InformationButton><NavLink style={{ textDecoration: 'none', color: '#274568' }} to={state.list_teacher}>Преподаватели</NavLink></InformationButton>
           </ButtonContainer>
         </InformationPanel>
         {

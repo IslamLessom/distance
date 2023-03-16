@@ -32,13 +32,12 @@ function ProgramPage() {
   useEffect(() => {
     fetchOnePrograms(id).then(data => setProgram(data))
   }, [])
-  console.log(program)
   return (
     <Container>
       <ProgramBlock>
         <Image src={process.env.REACT_APP_API_URL + program.images} />
         <ContainerText>
-          <Date>Создано {program.date.split('T')[0]}</Date>
+          <Date>Создано {program.date}</Date>
           <Description>{program.description}</Description>
           {program.active === 'Закрыто' ?
             <Actibe style={{ background: '#E8407C' }}>{program.active}</Actibe>

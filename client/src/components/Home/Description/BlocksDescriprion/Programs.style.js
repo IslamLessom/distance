@@ -5,6 +5,8 @@ import { device } from "../../../../assets/adaptation/device-width";
 export const Container = styled.div`
     background: #2C2E5E;
     padding-bottom: 100px;
+    width: 100vw;
+    height: 100vh;
 `
 
 export const Title = styled.h1`
@@ -47,14 +49,17 @@ export const Program = styled.div`
     background: white;
     border-radius: 8px;
     margin: 10px;
+    box-shadow: 6px 7px 9px #ffffff38;
 `
 
 export const Images = styled.img`
     width: 100%;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 `
 
 export const ContainerText = styled.div`
-    padding-left: 15px;
+   
 `
 
 export const DateCreate = styled.p`
