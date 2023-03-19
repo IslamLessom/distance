@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     background: #2c2e5e;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     padding-bottom: 100px;
 `
 export const Title = styled.h1`

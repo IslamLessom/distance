@@ -3,8 +3,8 @@ import { device, deviceMax } from "../../../../assets/adaptation/device-width";
 
 export const Container = styled.div`
     background: #2C2E5E;;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     padding-bottom: 100px;
 `
 

@@ -20,7 +20,11 @@ const Programs = sequelize.define('programs', {
     images: { type: DataTypes.STRING },
     date: { type: DataTypes.STRING },
     description: { type: DataTypes.STRING },
-    active: { type: DataTypes.STRING }
+    active: { type: DataTypes.STRING },
+    document: { type: DataTypes.STRING },
+    telegram: { type: DataTypes.STRING },
+    schedule: { type: DataTypes.STRING },
+    work: { type: DataTypes.STRING }
 })
 
 const ProgramInfo = sequelize.define('program_info', {

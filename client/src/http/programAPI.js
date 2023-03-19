@@ -1,9 +1,4 @@
-import { $authHost, $host } from '.';
-
-export const createPrograms = async (program) => {
-    const { data } = await $authHost.post('api/program', program)
-    return data
-}
+import {$host } from '.';
 
 export const fetchPrograms = async () => {
     const { data } = await $host.get('api/program')

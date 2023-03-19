@@ -11,7 +11,7 @@ import { Context } from './../index';
 
 //route
 import { NavLink } from 'react-router-dom';
-import { TEACHER_ROUTE } from '../utils/consts';
+import { CREATE_PROGRAM_ROUTE, HOME_AUTH_ROUTE, TEACHER_ROUTE } from '../utils/consts';
 
 //styledComponents
 import {
@@ -27,11 +27,6 @@ import {
   ButtonContainer,
   AdminPanel
 } from './PersonPage.styled'
-
-//image
-import user from '../assets/images/user_test.jfif'
-
-
 
 const PersonPage = observer(() => {
   const [loading, setLoading] = useState(true)
@@ -75,9 +70,6 @@ const PersonPage = observer(() => {
     }>Загрузка....</h1>
   }
 
-
-  console.log(state) 
-
   return (
     <Profile>
       <ProfileContainer>
@@ -96,9 +88,9 @@ const PersonPage = observer(() => {
         <InformationPanel>
           <Title>Информация</Title>
           <ButtonContainer>
-            <InformationButton><NavLink to={state.schedule}>Расписание занятий</NavLink></InformationButton>
-            <InformationButton>Новости</InformationButton>
-            <InformationButton><NavLink to={state.list_teacher}>Преподаватели</NavLink></InformationButton>
+            <InformationButton><NavLink style={{ textDecoration: 'none', color: '#274568' }} to={state.schedule}>Расписание занятий</NavLink></InformationButton>
+            <InformationButton><NavLink style={{ textDecoration: 'none', color: '#274568'}} to={HOME_AUTH_ROUTE}>Программы</NavLink></InformationButton>
+            <InformationButton><NavLink style={{ textDecoration: 'none', color: '#274568' }} to={state.list_teacher}>Преподаватели</NavLink></InformationButton>
           </ButtonContainer>
         </InformationPanel>
         {
@@ -107,7 +99,7 @@ const PersonPage = observer(() => {
               <AdminPanel>
                 <Title>Админ панель</Title>
                 <ButtonContainer>
-                  <InformationButton>Добавить программу</InformationButton>
+                  <InformationButton><NavLink style={{ textDecoration: 'none', color: '#274568' }} to={CREATE_PROGRAM_ROUTE}>Добавить программу</NavLink></InformationButton>
                   <InformationButton><NavLink style={{ textDecoration: 'none', color: '#274568' }} to={TEACHER_ROUTE}>Добавить ученика</NavLink></InformationButton>
                   <InformationButton>Все ученики</InformationButton>
                 </ButtonContainer>

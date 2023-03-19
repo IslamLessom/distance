@@ -18,7 +18,7 @@ function Authorization() {
                 <TextContainer>
                     <Text>ЧТО ДЕЛАТЬ ?</Text>
                 </TextContainer>
-                <Description>Что бы начать пользоваться сайтом вам нужно обратиться к куратору ващего курса. Куратор выдаст логин и пароль</Description>
+                <Description>Чтобы начать пользоваться сайтом , вам нужно обратиться к куратору вашего курса. Куратор выдаст логин и пароль</Description>
             </BlockContent>
         </Container>
     )

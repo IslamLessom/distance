@@ -5,26 +5,9 @@ const { Programs, ProgramInfo } = require('../models/models')
 class ProgramController {
     async create(req, res, next) {
         try {
-            let { date, description, active, info } = req.body
-            
-            const { img } = req.files
-            let fileName = uuid.v4() + '.jpg'
-            img.mv(path.resolve(__dirname, '..', 'static', fileName))
+            let {images, date, description, active, telegram, schedule, work, document } = req.body
 
-            if (info) {
-                info = JSON.parse(info)
-                info.forEach(i =>
-                    ProgramInfo.create({
-                        programId: program.id,
-                        document: i.document,
-                        date: i.date,
-                        description: i.description,
-                        active: i.active
-                    })
-                )
-            }
-
-            const program = await Programs.create({ images: fileName, date, description, active })
+            const program = await Programs.create({ images, date, description, active, telegram, schedule, work, document })
 
             return res.json(program)
         } catch (e) {

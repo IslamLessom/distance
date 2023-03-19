@@ -1,4 +1,5 @@
 import React from 'react'
+import ProgramItem from '../components/Home/Description/BlocksDescriprion/ProgramItem'
 
 //styled-components
 import {Container} from './AuthHome.styled'
@@ -6,7 +7,6 @@ import {Container} from './AuthHome.styled'
 function AuthHome() {
   return (
     <Container>
-      <h1>asdassadas</h1>
     </Container>
   )
 }

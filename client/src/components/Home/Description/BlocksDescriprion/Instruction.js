@@ -16,15 +16,15 @@ import {
 function Instruction() {
   return (
     <Container>
-      <NameText>Интструкция к обучению</NameText>
-      <NameDescription>То как вам следует действовать</NameDescription>
+      <NameText>Инструкция к обучению</NameText>
+      <NameDescription>То , как вам следует действовать</NameDescription>
       <InstructionBlocks>
         <Instructions>
           <NumberContainer>
             <NumberInstruction>1</NumberInstruction>
           </NumberContainer>
           <DescriptionContainer>
-            <DescriptionInstruction>Для того что бы принимать активное участие в дистанционном обучении , вам следует обратиться к своему куратору и попросить о том что бы он вам выдал доступ к сайту </DescriptionInstruction>
+            <DescriptionInstruction>Для того , чтобы принимать активное участие в дистанционном обучении , вам следует обратиться к своему куратору и попросить о том , чтобы он вам выдал доступ к сайту </DescriptionInstruction>
           </DescriptionContainer>
         </Instructions>
         <Instructions>
@@ -32,7 +32,7 @@ function Instruction() {
             <NumberInstruction>2</NumberInstruction>
           </NumberContainer>
           <DescriptionContainer>
-            <DescriptionInstruction>Как выполняются задания . На сайте есть специально отведенная страница , где преподаватель публикует задания на день , вам лишь нужно скачать и выполнять </DescriptionInstruction>
+            <DescriptionInstruction>Как выполняются задания . На сайте есть специально отведенная страница , где преподаватель публикует задания на день , вам лишь нужно перейти и выполнять </DescriptionInstruction>
           </DescriptionContainer>
         </Instructions>
         <Instructions>
@@ -40,7 +40,7 @@ function Instruction() {
             <NumberInstruction>3</NumberInstruction>
           </NumberContainer>
           <DescriptionContainer>
-            <DescriptionInstruction>После выполнения заданий вам нужно отправить их преподавателю на определенной странице на сайте</DescriptionInstruction>
+            <DescriptionInstruction>После выполнения заданий , вам нужно отправить их преподавателю на определенной странице на сайте</DescriptionInstruction>
           </DescriptionContainer>
         </Instructions>
         <Instructions>
@@ -48,7 +48,7 @@ function Instruction() {
             <NumberInstruction>4</NumberInstruction>
           </NumberContainer>
           <DescriptionContainer>
-            <DescriptionInstruction>Если у вас возникнут проблемы обращайтесь по номеру указанному в тех.поддержке </DescriptionInstruction>
+            <DescriptionInstruction>Если у вас возникнут проблемы , обращайтесь по номеру , указанному в тех.поддержке </DescriptionInstruction>
           </DescriptionContainer>
         </Instructions>
 
