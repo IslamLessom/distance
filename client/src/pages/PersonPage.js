@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useContext } from 'react'
 
 //mob-x
@@ -11,7 +12,7 @@ import { Context } from './../index';
 
 //route
 import { NavLink } from 'react-router-dom';
-import { CREATE_PROGRAM_ROUTE, HOME_AUTH_ROUTE, TEACHER_ROUTE } from '../utils/consts';
+import { CREATE_PROGRAM_ROUTE, PROGRAMS_ROUTE, TEACHER_ROUTE } from '../utils/consts';
 
 //styledComponents
 import {
@@ -89,7 +90,7 @@ const PersonPage = observer(() => {
           <Title>Информация</Title>
           <ButtonContainer>
             <InformationButton><NavLink style={{ textDecoration: 'none', color: '#274568' }} to={state.schedule}>Расписание занятий</NavLink></InformationButton>
-            <InformationButton><NavLink style={{ textDecoration: 'none', color: '#274568'}} to={HOME_AUTH_ROUTE}>Программы</NavLink></InformationButton>
+            <InformationButton><NavLink style={{ textDecoration: 'none', color: '#274568'}} to={PROGRAMS_ROUTE}>Программы</NavLink></InformationButton>
             <InformationButton><NavLink style={{ textDecoration: 'none', color: '#274568' }} to={state.list_teacher}>Преподаватели</NavLink></InformationButton>
           </ButtonContainer>
         </InformationPanel>

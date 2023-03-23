@@ -28,7 +28,7 @@ export const ProgramBlocks = styled.div`
     cursor: pointer;
     
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 30% 30% 30%;
 
     @media ${device.mobileS} {
         grid-template-columns: 100%;
@@ -41,7 +41,7 @@ export const ProgramBlocks = styled.div`
     }
 
     @media ${device.laptop} {
-        grid-template-columns: 33% 33% 33%;
+        grid-template-columns: 30% 30% 30%;
         justify-content: center;
     }
 `
@@ -53,13 +53,12 @@ export const Program = styled.div`
 `
 
 export const Images = styled.img`
-    width: 80%;
+    width: 75%;
     display: flex;
     margin-left:auto ;
     margin-right:auto ;
     height: 200px;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
+    margin-top: 15px;
 `
 
 export const ContainerText = styled.div`

@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 import { device, deviceMax } from "../../../../assets/adaptation/device-width";
 
@@ -110,4 +111,4 @@ export const DescriptionContainer = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-` 
+`

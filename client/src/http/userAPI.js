@@ -7,8 +7,8 @@ export const registration = async (name, first_name, father_name, group, schedul
     return jwt_decode(data.token)
 }
 
-export const createPrograms = async (images, date, description, active, telegram, schedule, work, document) => {
-    const { data } = await $authHost.post('api/children/program-create', {images, date, description, active, telegram, schedule, work, document})
+export const createPrograms = async (images, date, description, active) => {
+    const { data } = await $authHost.post('api/children/program-create', {images, date, description, active})
     return data
 }
 

@@ -1,3 +1,4 @@
+
 //ROUTE
 import {
     STUDENT_ROUTE,
@@ -71,5 +72,5 @@ export const publicRoutes = [
     {
         path: SETTING_AUTH_ROUTE,
         Component: Authorization
-    },
+    }
 ]

@@ -1,3 +1,4 @@
+
 import React, { useContext, useState } from 'react'
 import { Context } from '../../../../index';
 
@@ -27,7 +28,7 @@ const ProgramItem = ({ program }) => {
             {user.isAuth ?
                 <ContainerText key={program.id} onClick={() => navigate(PROGRAMS_ROUTE + '/' + program.id)} >
                     <Images src={program.images} />
-                    <div style={{ paddingLeft: '10px' }}>
+                    <div style={{ paddingLeft: '25px' }}>
                         <DateCreate>Создано {program.date.split('T', 1)}</DateCreate>
                         <DescriptionProgram>{program.description}</DescriptionProgram>
                         {program.active === 'Закрыта' ?
@@ -41,7 +42,7 @@ const ProgramItem = ({ program }) => {
                 :
                 <ContainerText key={program.id}>
                     <Images src={program.images} />
-                    <div style={{ paddingLeft: '10px' }}>
+                    <div style={{ paddingLeft: '25px' }}>
                         <DateCreate>Создано {program.date.split('T', 1)}</DateCreate>
                         <DescriptionProgram>{program.description}</DescriptionProgram>
                         {program.active === 'Закрыто' ?

@@ -1,3 +1,4 @@
+
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -21,7 +22,10 @@ export const ProgramBlock = styled.div`
     border-radius: 10px;
 `
 export const Image = styled.img`
-    width: 100%;
+    width: 80%;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
     height: 250px;
     border-radius: 8px;
 `
@@ -86,4 +90,3 @@ export const Button = styled.a`
     border-radius: 10px;
     text-decoration: none;
 `
-
