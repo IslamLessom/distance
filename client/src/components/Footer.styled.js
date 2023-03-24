@@ -1,8 +1,14 @@
 import styled from "styled-components";
+import { deviceMax, device } from '../assets/adaptation/device-width'
 
 export const Components = styled.div`
     position: relative;
     padding-top: 160px;
+
+    @media ${deviceMax.laptop} {
+        padding-top: 400px;
+    }
+    
 `
 export const Footers = styled.div`
     position: absolute;
@@ -12,6 +18,11 @@ export const Footers = styled.div`
     grid-template-columns: 33% 33% 34%;
     align-items: end;
     padding-bottom: 10px;
+
+    @media ${deviceMax.laptop} {
+        grid-template-columns: 100%;  
+    }
+       
 `
 export const PhoneContainer = styled.div`
     text-align: center;
