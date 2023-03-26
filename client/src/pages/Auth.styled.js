@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { deviceMax } from '../assets/adaptation/device-width';
 
 export const Container = styled.div`
     text-align: center;
@@ -10,6 +11,9 @@ export const Container = styled.div`
     border-radius: 10px;
     position: relative;
     margin-top: 50px;
+    @media ${deviceMax.laptop} {
+        width : 92%;
+    }
 `
 export const AuthBlock = styled.div`
     width: 100%;
@@ -28,6 +32,9 @@ export const ContainerInput = styled.div`
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
+    @media ${deviceMax.laptop} {
+        width : 92%;
+    }
 `
 export const Login = styled.input`
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
@@ -56,7 +63,7 @@ export const Password = styled.input`
 `
 export const Button = styled.button`
     position: absolute;
-    top:80%;
+    top:70%;
     left:50%;
     transform:translate(-50%, -50%);
     border: none;
@@ -66,4 +73,6 @@ export const Button = styled.button`
     font-size: 25px;
     color: #01244E;
     cursor: pointer;
+
+    
 `

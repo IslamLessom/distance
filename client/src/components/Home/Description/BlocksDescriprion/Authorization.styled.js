@@ -1,11 +1,15 @@
 
 import styled from 'styled-components';
+import { deviceMax, device } from '../../../../assets/adaptation/device-width'
 
 export const Container = styled.div`
     background: #2c2e5e;
     width: 100vw;
     height: 100vh;
     padding-bottom: 100px;
+    @media ${deviceMax.laptop} {
+        height: 100%; 
+    }
 `
 export const Title = styled.h1`
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
