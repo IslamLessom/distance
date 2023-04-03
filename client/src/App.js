@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 //mob-x
 import { observer } from 'mobx-react-lite';
 
+
 //components
 import Navbar from './components/Navbar';
 import AppRouter from './components/AppRouter';
